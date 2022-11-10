@@ -22,26 +22,21 @@ function createCard(date, day, games){
 `
 }
 
-/*let d20 = "20/11"
-    d21 = "21/11",
-    d22 = "22/11",
-    d23 = "23/11",
-    d24 = "24/11",
-    d25 = "25/11",
-    d26 = "26/11",
-    d27 = "27/11",
-    d28 = "28/11",
-    d29 = "29/11",
-    d30 = "30/11",
-    d01 = "01/12",
-    d02 = "02/12";
-    */
+function start(){
+
+    document.querySelector('.start').innerHTML = `<button id="jogosHoje">Jogos de hoje</button>
+    <button id="todosJogos">Todos os jogos</button>`
+
+}
+
+start();
 
 document.querySelector('#app').innerHTML = `
 <header>
             <img src="assets/logo.svg" alt="">
         </header>
         <main id="cards">
+        <div id="cardHide">
             ${createCard("20/11", "domingo",createGame('catar', '13:00', 'equador'))}
 
             ${createCard("21/11", "segunda",createGame('inglaterra', '10:00', 'ira') + createGame('senegal', '13:00', 'holanda')+ createGame('estados-unidos', '16:00', 'gales'))}
@@ -89,6 +84,15 @@ document.querySelector('#app').innerHTML = `
              ${createCard("02/12", "sexta",createGame('coreia-do-sul', '07:00', 'portugal')
              + createGame('gana', '10:00', 'uruguai')+ createGame('servia', '13:00', 'suica')
              + createGame('camaroes', '16:00', 'brasil'))}
-            
+        </div>    
         </main>
 `
+let bntJogosHoje = document.getElementById('todosJogos');
+let cards = document.querySelector('#cardHide');
+
+bntJogosHoje.addEventListener("click", function(){
+
+    document.querySelector(".start").setAttribute("class", "hide");
+    cards.removeAttribute("id", "cardHide");
+    
+});

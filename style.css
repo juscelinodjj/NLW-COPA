@@ -19,6 +19,13 @@ body * {
     font-family: 'Roboto', sans-serif;
 }
 
+.hide {
+    display: none;
+}
+#cardHide{
+    display: none;
+}
+
 #app {
     width: fit-content;
     margin: 52px auto;
@@ -42,6 +49,33 @@ header {
     
     border-bottom : 2px solid #F7DD43;
     border-radius : 6px ;
+}
+
+.start {
+    padding: 32px 12px;
+    text-align: center;
+    background : #1D1C19;
+    width: 80vw;
+    border-bottom : 2px solid #F7DD43;
+    border-radius : 6px ;
+    margin: auto;
+    
+}
+
+button {
+    color: #c5c5cc;
+    background : #1D1C19;
+    margin: 3px;
+    border: none;
+    border : 2px solid #F7DD43;
+    border-radius : 6px ;
+    padding: 3%;
+}
+
+button:hover{
+    border : 2px solid #9e8d2b;
+    background : #34322c;
+    color: #fff;
 }
 
 .card h2 {
