@@ -31,6 +31,13 @@ body * {
     margin: 52px auto;
 }
 
+.data{
+    text-align: center;
+    padding-bottom: 60px;
+    color: #c5c5cc;
+    font-size: 22px;
+}
+
 header {
     margin-bottom: 63px;
     text-align: center;

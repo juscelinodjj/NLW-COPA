@@ -13,7 +13,7 @@ function createGame(player1, hour, player2){
 function createCard(date, day, games){
     return `
     <div class="card">
-                <h2>${date} <span>${day}</span></h2>
+                <h2 class=${date}>${date} <span>${day}</span></h2>
 
                 <ul>
                      ${games}
@@ -37,62 +37,85 @@ document.querySelector('#app').innerHTML = `
         </header>
         <main id="cards">
         <div id="cardHide">
-            ${createCard("20/11", "domingo",createGame('catar', '13:00', 'equador'))}
-
-            ${createCard("21/11", "segunda",createGame('inglaterra', '10:00', 'ira') + createGame('senegal', '13:00', 'holanda')+ createGame('estados-unidos', '16:00', 'gales'))}
-            
-            ${createCard("22/11", "terça",createGame('argentina', '07:00', 'arabia-saudita')
+            ${createCard("12/11/2022","",createGame('catar', '13:00', 'equador'))}
+            <br>
+            ${createCard("21/11/2022", "segunda",createGame('inglaterra', '10:00', 'ira') + createGame('senegal', '13:00', 'holanda')+ createGame('estados-unidos', '16:00', 'gales'))}
+            <br>
+            ${createCard("22/11/2022", "terça",createGame('argentina', '07:00', 'arabia-saudita')
              + createGame('dinamarca', '10:00', 'tunisia')+ createGame('mexico', '13:00', 'polonia')
              + createGame('franca', '16:00', 'australia'))}
-
-             ${createCard("23/11", "quarta",createGame('marrocos', '07:00', 'croacia')
+             <br>
+             ${createCard("23/11/2022", "quarta",createGame('marrocos', '07:00', 'croacia')
              + createGame('alemanha', '10:00', 'japao')+ createGame('espanha', '13:00', 'costa-rica')
              + createGame('belgica', '16:00', 'canada'))}
-
-             ${createCard("24/11", "quinta",createGame('suica', '07:00', 'camaroes')
+             <br>
+             ${createCard("24/11/2022", "quinta",createGame('suica', '07:00', 'camaroes')
              + createGame('uruguai', '10:00', 'coreia-do-sul')+ createGame('portugal', '13:00', 'gana')
              + createGame('brasil', '16:00', 'servia'))}
-
-             ${createCard("25/11", "sexta",createGame('gales', '07:00', 'ira')
+             <br>
+             ${createCard("25/11/2022", "sexta",createGame('gales', '07:00', 'ira')
              + createGame('catar', '10:00', 'senegal')+ createGame('holanda', '13:00', 'equador')
              + createGame('inglaterra', '16:00', 'estados-unidos'))}
-
-             ${createCard("26/11", "sabado",createGame('tunisia', '07:00', 'australia')
+             <br>
+             ${createCard("26/11/2022", "sabado",createGame('tunisia', '07:00', 'australia')
              + createGame('polonia', '10:00', 'arabia-saudita')+ createGame('franca', '13:00', 'dinamarca')
              + createGame('argentina', '16:00', 'mexico'))}
-
-             ${createCard("27/11", "domingo",createGame('japao', '07:00', 'costa-rica')
+             <br>
+             ${createCard("27/11/2022", "domingo",createGame('japao', '07:00', 'costa-rica')
              + createGame('belgica', '10:00', 'marrocos')+ createGame('croacia', '13:00', 'canada')
              + createGame('espanha', '16:00', 'alemanha'))}
-
-             ${createCard("28/11", "segunda",createGame('camaroes', '07:00', 'servia')
+             <br>
+             ${createCard("28/11/2022", "segunda",createGame('camaroes', '07:00', 'servia')
              + createGame('coreia-do-sul', '10:00', 'gana')+ createGame('brasil', '13:00', 'suica')
              + createGame('portugal', '16:00', 'uruguai'))}
-
-             ${createCard("29/11", "terca",createGame('equador', '07:00', 'senegal')
+             <br>
+             ${createCard("29/11/2022", "terca",createGame('equador', '07:00', 'senegal')
              + createGame('holanda', '10:00', 'catar')+ createGame('ira', '13:00', 'estados-unidos')
              + createGame('gales', '16:00', 'inglaterra'))}
-
-             ${createCard("30/11", "quarta",createGame('tunisia', '07:00', 'franca')
+             <br>
+             ${createCard("30/11/2022", "quarta",createGame('tunisia', '07:00', 'franca')
              + createGame('australia', '10:00', 'dinamarca')+ createGame('polonia', '13:00', 'argentina')
              + createGame('arabia-saudita', '16:00', 'mexico'))}
-
-             ${createCard("01/12", "quinta",createGame('croacia', '07:00', 'belgica')
+             <br>
+             ${createCard("01/12/2022", "quinta",createGame('croacia', '07:00', 'belgica')
              + createGame('canada', '10:00', 'marrocos')+ createGame('japao', '13:00', 'espanha')
              + createGame('costa-rica', '16:00', 'alemanha'))}
-
-             ${createCard("02/12", "sexta",createGame('coreia-do-sul', '07:00', 'portugal')
+             <br>
+             ${createCard("02/12/2022", "sexta",createGame('coreia-do-sul', '07:00', 'portugal')
              + createGame('gana', '10:00', 'uruguai')+ createGame('servia', '13:00', 'suica')
              + createGame('camaroes', '16:00', 'brasil'))}
         </div>    
         </main>
 `
-let bntJogosHoje = document.getElementById('todosJogos');
+let bnttodosJogos = document.getElementById('todosJogos');
+
+let bntJogosHoje = document.getElementById('jogosHoje');
+
 let cards = document.querySelector('#cardHide');
 
-bntJogosHoje.addEventListener("click", function(){
+let dataAtual = moment().format('DD/MM/YYYY');
+
+document.querySelector('.data').innerHTML = dataAtual;
+
+bnttodosJogos.addEventListener("click", function(){
 
     document.querySelector(".start").setAttribute("class", "hide");
     cards.removeAttribute("id", "cardHide");
+    document.querySelector(".data").setAttribute("class", "hide");
     
 });
+
+bntJogosHoje.addEventListener("click", function(){
+   let datas = document.querySelectorAll(".card>h2")
+    datas.forEach(data =>{
+        console.log(data.innerText);
+        if (data === dataAtual){
+            alert('deu')
+        } else {
+            alert('não deu')
+        }
+    });
+});
+
+
+
