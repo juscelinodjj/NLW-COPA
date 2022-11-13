@@ -37,7 +37,7 @@ document.querySelector('#app').innerHTML = `
         </header>
         <main id="cards">
         <div id="cardHide">
-            ${createCard("12/11/2022","",createGame('catar', '13:00', 'equador'))}
+            ${createCard("13/11/2022","",createGame('catar', '13:00', 'equador'))}
             <br>
             ${createCard("21/11/2022", "segunda",createGame('inglaterra', '10:00', 'ira') + createGame('senegal', '13:00', 'holanda')+ createGame('estados-unidos', '16:00', 'gales'))}
             <br>
@@ -107,14 +107,28 @@ bnttodosJogos.addEventListener("click", function(){
 
 bntJogosHoje.addEventListener("click", function(){
    let datas = document.querySelectorAll(".card>h2")
-    datas.forEach(data =>{
+    /*datas.forEach(data =>{
         console.log(data.innerText);
-        if (data === dataAtual){
+        console.log(dataAtual);
+        if (data == dataAtual){
             alert('deu')
         } else {
             alert('não deu')
         }
-    });
+    });*/
+     switch (datas){
+        case 'h2.13/11/2022':
+            console.log("data atual");
+            console.log(dataAtual);
+            break;
+
+        case '14/11/2022':  
+            console.log("data divergente");
+            break;  
+        default:
+            console.log('tudo deu errado');
+            console.log(datas);
+     }
 });
 
 
