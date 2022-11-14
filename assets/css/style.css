@@ -1,0 +1,120 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121214;
+  background-image: url('/assets/img/bg.svg');
+  background-position-x: center;
+  background-position-y: -715px;
+}
+
+.hide {
+  display: none;
+}
+
+#app {
+  margin: 52px auto;
+  width: fit-content;
+}
+
+header {
+  margin-bottom: 63px;
+  text-align: center;
+}
+
+#date {
+  color: #c5c5cc;
+  font-size: 22px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+#btns {
+  background : #1D1C19;
+  border-bottom : 2px solid #F7DD43;
+  border-radius : 6px ;
+  margin: auto;
+  padding: 32px 12px;
+  text-align: center;
+  width: 80vw;
+}
+
+#btnTodayGames, #btnAllGames {
+  color: #c5c5cc;
+  background : #1D1C19;
+  margin: 3px;
+  border: none;
+  border : 2px solid #F7DD43;
+  border-radius : 6px ;
+  padding: 3%;
+}
+
+#btnTodayGames:hover, #btnAllGames:hover{
+  border : 2px solid #9e8d2b;
+  background : #34322c;
+  color: #fff;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  background : #1D1C19;
+  border-bottom : 2px solid #F7DD43;
+  border-radius : 6px ;
+  padding: 32px 23px;
+  text-align: center;
+}
+
+.card h2 {
+  align-items: center;
+  border: 1px solid #746615;
+  border-radius: 6px;
+  color: #F7DD43;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 53px;
+  margin-inline: auto;
+  padding: 8px 16px;
+  width: fit-content;
+
+}
+
+.card h2 span {
+  color: #E1E1E6;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 270px;
+}
+
+.card ul li {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card ul li + li {
+  border-top: 1px solid #323238;
+  padding-top: 24px;
+}
+
+.card ul li strong {
+  color: #E1E1E6;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 125%;
+}
