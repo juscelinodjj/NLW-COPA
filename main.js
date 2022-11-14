@@ -1,3 +1,6 @@
+import { formatDistance, subDays } from 'date-fns'
+formatDistance(subDays(new Date(), 3), new Date(), { addSuffix: true })
+
 function createGame(player1, hour, player2){
 
     return `
@@ -14,7 +17,7 @@ function createCard(date, day, games){
     return `
     <div class="card">
                 <h2 class=${date}>${date} <span>${day}</span></h2>
-
+            
                 <ul>
                      ${games}
                 </ul>
@@ -94,6 +97,10 @@ let bntJogosHoje = document.getElementById('jogosHoje');
 let cards = document.querySelector('#cardHide');
 
 let dataAtual = moment().format('DD/MM/YYYY');
+ //const currentDate = new Date();
+ //const gamedate = parse(13/11/2022, 'dd/MM/yyyy', dataAtual);
+ //const isfuture = isBefore(dataAtual, gameDate);
+console.log(dataAtual);
 
 document.querySelector('.data').innerHTML = dataAtual;
 
@@ -106,7 +113,8 @@ bnttodosJogos.addEventListener("click", function(){
 });
 
 bntJogosHoje.addEventListener("click", function(){
-   let datas = document.querySelectorAll(".card>h2")
+   let datas = document.querySelectorAll(".card");
+   
     /*datas.forEach(data =>{
         console.log(data.innerText);
         console.log(dataAtual);
@@ -116,7 +124,7 @@ bntJogosHoje.addEventListener("click", function(){
             alert('não deu')
         }
     });*/
-     switch (datas){
+     /*switch (datas){
         case 'h2.13/11/2022':
             console.log("data atual");
             console.log(dataAtual);
@@ -128,7 +136,7 @@ bntJogosHoje.addEventListener("click", function(){
         default:
             console.log('tudo deu errado');
             console.log(datas);
-     }
+     }*/
 });
 
 
